@@ -11,13 +11,12 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
 
-    let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230111"
+    let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20230111"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         callRequest()
     }
-
 
     private func callRequest() {
         AF.request(url, method: .get).validate().responseJSON { response in
@@ -25,6 +24,10 @@ class ViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print(json)
+                
+                let name = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
+                print(name, "떴냐 ???")
+                
             case .failure(let error):
                 print(error)
             }
