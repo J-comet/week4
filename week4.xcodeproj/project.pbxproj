@@ -16,6 +16,7 @@
 		C0A405382A8096AF00C7C1CE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A405372A8096AF00C7C1CE /* Alamofire */; };
 		C0A4053B2A8096BE00C7C1CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C0A4053A2A8096BE00C7C1CE /* Kingfisher */; };
 		C0A4053E2A8096CB00C7C1CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C0A4053D2A8096CB00C7C1CE /* SwiftyJSON */; };
+		C0A405402A809BA400C7C1CE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0A4053F2A809BA400C7C1CE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C0A4052B2A80965800C7C1CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A4052E2A80965800C7C1CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0A405302A80965800C7C1CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A4053F2A809BA400C7C1CE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				C0A405222A80965700C7C1CE /* AppDelegate.swift */,
 				C0A405242A80965700C7C1CE /* SceneDelegate.swift */,
 				C0A405262A80965700C7C1CE /* ViewController.swift */,
+				C0A4053F2A809BA400C7C1CE /* .gitignore */,
 				C0A405282A80965700C7C1CE /* Main.storyboard */,
 				C0A4052B2A80965800C7C1CE /* Assets.xcassets */,
 				C0A4052D2A80965800C7C1CE /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A405402A809BA400C7C1CE /* .gitignore in Resources */,
 				C0A4052F2A80965800C7C1CE /* LaunchScreen.storyboard in Resources */,
 				C0A4052C2A80965800C7C1CE /* Assets.xcassets in Resources */,
 				C0A4052A2A80965700C7C1CE /* Main.storyboard in Resources */,
