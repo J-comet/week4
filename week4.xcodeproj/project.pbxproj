@@ -19,6 +19,8 @@
 		C0A405402A809BA400C7C1CE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0A4053F2A809BA400C7C1CE /* .gitignore */; };
 		C0A405422A809C3000C7C1CE /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405412A809C3000C7C1CE /* TranslationViewController.swift */; };
 		C0A405442A809C5D00C7C1CE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405432A809C5D00C7C1CE /* APIKey.swift */; };
+		C0A405502A81C4D000C7C1CE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */; };
+		C0A405522A81E78700C7C1CE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405512A81E78700C7C1CE /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		C0A4053F2A809BA400C7C1CE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C0A405412A809C3000C7C1CE /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		C0A405432A809C5D00C7C1CE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		C0A405512A81E78700C7C1CE /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				C0A405412A809C3000C7C1CE /* TranslationViewController.swift */,
 				C0A405432A809C5D00C7C1CE /* APIKey.swift */,
 				C0A405282A80965700C7C1CE /* Main.storyboard */,
+				C0A405512A81E78700C7C1CE /* VideoViewController.swift */,
+				C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */,
 				C0A4052B2A80965800C7C1CE /* Assets.xcassets */,
 				C0A4052D2A80965800C7C1CE /* LaunchScreen.storyboard */,
 				C0A405302A80965800C7C1CE /* Info.plist */,
@@ -165,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A405422A809C3000C7C1CE /* TranslationViewController.swift in Sources */,
+				C0A405522A81E78700C7C1CE /* VideoViewController.swift in Sources */,
+				C0A405502A81C4D000C7C1CE /* WeatherViewController.swift in Sources */,
 				C0A405272A80965700C7C1CE /* ViewController.swift in Sources */,
 				C0A405232A80965700C7C1CE /* AppDelegate.swift in Sources */,
 				C0A405252A80965700C7C1CE /* SceneDelegate.swift in Sources */,
