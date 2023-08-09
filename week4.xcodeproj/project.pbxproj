@@ -21,6 +21,7 @@
 		C0A405442A809C5D00C7C1CE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405432A809C5D00C7C1CE /* APIKey.swift */; };
 		C0A405502A81C4D000C7C1CE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */; };
 		C0A405522A81E78700C7C1CE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405512A81E78700C7C1CE /* VideoViewController.swift */; };
+		C0C1597C2A83230E0052D82C /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1597B2A83230E0052D82C /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C0A405432A809C5D00C7C1CE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		C0A405512A81E78700C7C1CE /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		C0C1597B2A83230E0052D82C /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C0A405432A809C5D00C7C1CE /* APIKey.swift */,
 				C0A405282A80965700C7C1CE /* Main.storyboard */,
 				C0A405512A81E78700C7C1CE /* VideoViewController.swift */,
+				C0C1597B2A83230E0052D82C /* VideoTableViewCell.swift */,
 				C0A4054F2A81C4D000C7C1CE /* WeatherViewController.swift */,
 				C0A4052B2A80965800C7C1CE /* Assets.xcassets */,
 				C0A4052D2A80965800C7C1CE /* LaunchScreen.storyboard */,
@@ -175,6 +178,7 @@
 				C0A405502A81C4D000C7C1CE /* WeatherViewController.swift in Sources */,
 				C0A405272A80965700C7C1CE /* ViewController.swift in Sources */,
 				C0A405232A80965700C7C1CE /* AppDelegate.swift in Sources */,
+				C0C1597C2A83230E0052D82C /* VideoTableViewCell.swift in Sources */,
 				C0A405252A80965700C7C1CE /* SceneDelegate.swift in Sources */,
 				C0A405442A809C5D00C7C1CE /* APIKey.swift in Sources */,
 			);
