@@ -10,44 +10,53 @@ import Alamofire
 import SwiftyJSON
 
 struct Movie {
-    var showCnt: String
-    var movieCd: String
-    var salesAmt: String
-    var scrnCnt: String
-    var salesInten: String
-    var rank: String
-    var audiCnt: String
-    var audiChange: String
-    var rankInten: String
+//    var showCnt: String
+//    var movieCd: String
+//    var salesAmt: String
+//    var scrnCnt: String
+//    var salesInten: String
+//    var rank: String
+//    var audiCnt: String
+//    var audiChange: String
+//    var rankInten: String
     var openDt: String
-    var salesShare: String
-    var salesChange: String
-    var salesAcc: String
+//    var salesShare: String
+//    var salesChange: String
+//    var salesAcc: String
     var movieNm: String
-    var rankOldAndNew: String
-    var audiAcc: String
-    var rnum: String
-    var audiInten: String
+//    var rankOldAndNew: String
+//    var audiAcc: String
+//    var rnum: String
+//    var audiInten: String
 }
 
 class ViewController: UIViewController {
-
-    let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20230111"
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var movieTableView: UITableView!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     var movieList: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequest()
+//        callRequest()
         
+        searchBar.delegate = self
         movieTableView.delegate = self
         movieTableView.dataSource = self
         movieTableView.rowHeight = 60
+        
+        indicatorView.isHidden = true
     }
 
-    private func callRequest() {
+    private func callRequest(targetDt: String) {
+        
+        indicatorView.isHidden = false
+        indicatorView.startAnimating()
+        
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(targetDt)"
+        
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -55,9 +64,11 @@ class ViewController: UIViewController {
                 print(json)
                 
                 let arrMovie = json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue
-//                for item in arrMovie {
-//                    self.movieList.append(item)
-//                }
+                for item in arrMovie {
+                    self.movieList.append(
+                        Movie(openDt: item["openDt"].stringValue, movieNm: item["movieNm"].stringValue)
+                    )
+                }
                 
 //                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
 //                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
@@ -70,12 +81,24 @@ class ViewController: UIViewController {
                 // 한꺼번에 추가하기
 //                self.movieList.append(contentsOf: [name1, name2, name3])
                 
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
+                
                 self.movieTableView.reloadData()
                 
             case .failure(let error):
                 print(error)
             }
         }
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        // 20221010
+        callRequest(targetDt: searchBar.text!)
+        searchBar.endEditing(true)
     }
 }
 
