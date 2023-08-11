@@ -20,35 +20,53 @@ class TranslationViewController: UIViewController {
         "X-Naver-Client-Secret" : APIKey.naverSecret
     ]
     
+//    let helper = UserDefaultsHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        originTextView.text = UserDefaultsHelper.standard.nickname
+//        helper.age
+        
+        UserDefaults.standard.set("밥", forKey: UserDefaultsHelper.Key.nickname.rawValue)
+        UserDefaults.standard.set(33, forKey: UserDefaultsHelper.Key.age.rawValue)
+        
+        UserDefaults.standard.string(forKey: "nickname")
+        UserDefaults.standard.integer(forKey: "age")
+        
+        
+        
         resultTextView.isEditable = false
     }
     
     @IBAction func transButtonClicked(_ sender: UIButton) {
         callDetectLangs()
-//        callTransRequest()
     }
     
     func callDetectLangs() {
-        let url = "https://openapi.naver.com/v1/papago/detectLangs"
-        let parameters: Parameters = [
-            "query" : originTextView.text ?? ""
-        ]
-        
-        AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-                
-                let lang = json["langCode"].stringValue
-                self.callTransRequest(source: lang)
-                
-            case .failure(let error):
-                print(error)
-            }
+        TranslateAPIManager.shared.callDetectLangsRequest(text: originTextView.text) { langs in
+            print(langs)
         }
+        
+        
+//        let url = "https://openapi.naver.com/v1/papago/detectLangs"
+//        let parameters: Parameters = [
+//            "query" : originTextView.text ?? ""
+//        ]
+//
+//        AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                print(json)
+//
+//                let lang = json["langCode"].stringValue
+//                self.callTransRequest(source: lang)
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     func callTransRequest(source: String) {
