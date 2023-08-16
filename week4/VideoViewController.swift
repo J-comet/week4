@@ -19,7 +19,7 @@ struct Video {
     let link: String
     
     var contents: String {
-        return "\(author) | \(runTime)\n\(date)"
+        return "\(author) | \(runTime)회 \n\(date)"
     }
 }
 
@@ -48,7 +48,22 @@ class VideoViewController: UIViewController {
     private func callRequest(page: Int, query: String) {
         KakaoAPIManager.shared.callRequest(type: .video, query: query) { JSON in
             print(JSON)
+//            let statusCode = JSON.response?.statusCode ?? 500
             
+            self.isEnd = JSON["meta"]["is_end"].boolValue
+            
+            for item in JSON["documents"].arrayValue {
+                let video = Video(
+                    author: item["author"].stringValue,
+                    date: item["datetime"].stringValue,
+                    runTime: item["play_time"].intValue,
+                    thumbnail: item["thumbnail"].stringValue,
+                    title: item["title"].stringValue,
+                    link: item["url"].stringValue)
+
+                self.videoList.append(video)
+//                        print(self.videoList)
+            }
         }
         
 //        AF.request(url, method: .get, headers: header)
@@ -60,29 +75,6 @@ class VideoViewController: UIViewController {
 //                print(response.response?.statusCode)
 //                // validate 범위를 늘리면 다른 statusCode 를 예외처리 할 수 있음.
 //
-//                let statusCode = response.response?.statusCode ?? 500
-//
-//                self.isEnd = json["meta"]["is_end"].boolValue
-//
-//                print("isEnd = ",self.isEnd)
-//
-//                if statusCode == 200 {
-//                    for item in json["documents"].arrayValue {
-//                        let video = Video(
-//                            author: item["author"].stringValue,
-//                            date: item["datetime"].stringValue,
-//                            runTime: item["play_time"].intValue,
-//                            thumbnail: item["thumbnail"].stringValue,
-//                            title: item["title"].stringValue,
-//                            link: item["url"].stringValue)
-//
-//                        self.videoList.append(video)
-////                        print(self.videoList)
-//                    }
-//                } else {
-//                    print("문제가 발생했어요. 잠시 후 다시 시도해주세요")
-//
-//                }
 //
 //            case .failure(let error):
 //                print(error)

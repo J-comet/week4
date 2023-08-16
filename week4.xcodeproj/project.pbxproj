@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C032ACE02A8A024900592045 /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDF2A8A024900592045 /* BoxOfficeData.swift */; };
 		C0745C952A85BA9A0084535E /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C942A85BA9A0084535E /* ReusableViewProtocol.swift */; };
 		C0745C972A85BD000084535E /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C962A85BD000084535E /* UserDefaultsHelper.swift */; };
 		C0745C992A85C50F0084535E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C982A85C50F0084535E /* EndPoint.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C032ACDF2A8A024900592045 /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
 		C0745C942A85BA9A0084535E /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C0745C962A85BD000084535E /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		C0745C982A85C50F0084535E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				C0745C982A85C50F0084535E /* EndPoint.swift */,
 				C0745C9C2A85C77A0084535E /* KakaoAPIManager.swift */,
 				C0745C9A2A85C5CA0084535E /* URL+Extension.swift */,
+				C032ACDF2A8A024900592045 /* BoxOfficeData.swift */,
 			);
 			path = week4;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C0A405272A80965700C7C1CE /* ViewController.swift in Sources */,
 				C0A405232A80965700C7C1CE /* AppDelegate.swift in Sources */,
 				C0C1597C2A83230E0052D82C /* VideoTableViewCell.swift in Sources */,
+				C032ACE02A8A024900592045 /* BoxOfficeData.swift in Sources */,
 				C0A405252A80965700C7C1CE /* SceneDelegate.swift in Sources */,
 				C0A405442A809C5D00C7C1CE /* APIKey.swift in Sources */,
 			);
