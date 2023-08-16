@@ -16,7 +16,7 @@ enum Endpoint {
         switch self {
         case .blog: return URL.makeEndPointString("blog?query=")
         case .cafe: return URL.makeEndPointString("cafe?query=")
-        case .video: return URL.makeEndPointString("vclip?query=")
+        case .video: return URL.makeEndPointString("vclip")
         }
     }
 }

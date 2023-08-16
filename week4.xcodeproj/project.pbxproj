@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C032ACE02A8A024900592045 /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDF2A8A024900592045 /* BoxOfficeData.swift */; };
+		C052F1752A8CBFAF0008C7A6 /* KakaoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052F1742A8CBFAF0008C7A6 /* KakaoVideo.swift */; };
 		C0745C952A85BA9A0084535E /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C942A85BA9A0084535E /* ReusableViewProtocol.swift */; };
 		C0745C972A85BD000084535E /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C962A85BD000084535E /* UserDefaultsHelper.swift */; };
 		C0745C992A85C50F0084535E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0745C982A85C50F0084535E /* EndPoint.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		C032ACDF2A8A024900592045 /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
+		C052F1742A8CBFAF0008C7A6 /* KakaoVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoVideo.swift; sourceTree = "<group>"; };
 		C0745C942A85BA9A0084535E /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C0745C962A85BD000084535E /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		C0745C982A85C50F0084535E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C052F1732A8CBFA00008C7A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C052F1742A8CBFAF0008C7A6 /* KakaoVideo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C0A405162A80965700C7C1CE = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		C0A405212A80965700C7C1CE /* week4 */ = {
 			isa = PBXGroup;
 			children = (
+				C052F1732A8CBFA00008C7A6 /* Model */,
 				C0A405222A80965700C7C1CE /* AppDelegate.swift */,
 				C0A405242A80965700C7C1CE /* SceneDelegate.swift */,
 				C0A405262A80965700C7C1CE /* ViewController.swift */,
@@ -200,6 +211,7 @@
 				C0745C972A85BD000084535E /* UserDefaultsHelper.swift in Sources */,
 				C0A405422A809C3000C7C1CE /* TranslationViewController.swift in Sources */,
 				C0A405522A81E78700C7C1CE /* VideoViewController.swift in Sources */,
+				C052F1752A8CBFAF0008C7A6 /* KakaoVideo.swift in Sources */,
 				C0745C952A85BA9A0084535E /* ReusableViewProtocol.swift in Sources */,
 				C0745C992A85C50F0084535E /* EndPoint.swift in Sources */,
 				C0745C9F2A85E3690084535E /* TranslateAPIManager.swift in Sources */,

@@ -16,6 +16,16 @@ class KakaoAPIManager {
     static let shared = KakaoAPIManager()
     private init(){}
     
+    func call<T: Codable>(type: Endpoint, parameters: Parameters, responseData: T.Type, complete: @escaping (_ response: DataResponse<T, AFError>) -> ()) {
+        let url = type.requestURL
+        print("url = ", url)
+        AF.request(url, method: .get, parameters: parameters, headers: header)
+            .validate(statusCode: 200...500)
+            .responseDecodable(of: T.self) { response in
+               complete(response)
+            }
+    }
+    
     func callRequest(type: Endpoint,query: String, completionHandler: @escaping (JSON) -> ()) {
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         

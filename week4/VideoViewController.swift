@@ -25,7 +25,7 @@ struct Video {
 
 class VideoViewController: UIViewController {
     
-    var videoList: [Video] = [] {
+    var videoList: [Document] = [] {
         didSet {
             videoTableView.reloadData()
         }
@@ -46,40 +46,41 @@ class VideoViewController: UIViewController {
     }
 
     private func callRequest(page: Int, query: String) {
-        KakaoAPIManager.shared.callRequest(type: .video, query: query) { JSON in
-            print(JSON)
-//            let statusCode = JSON.response?.statusCode ?? 500
-            
-            self.isEnd = JSON["meta"]["is_end"].boolValue
-            
-            for item in JSON["documents"].arrayValue {
-                let video = Video(
-                    author: item["author"].stringValue,
-                    date: item["datetime"].stringValue,
-                    runTime: item["play_time"].intValue,
-                    thumbnail: item["thumbnail"].stringValue,
-                    title: item["title"].stringValue,
-                    link: item["url"].stringValue)
-
-                self.videoList.append(video)
-//                        print(self.videoList)
+//        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        let parameters: Parameters = [
+            "query" : query,
+            "page" : "\(page)"
+        ]
+        
+        KakaoAPIManager.shared.call(type: .video, parameters: parameters, responseData: KakaoVideo.self) { response in
+            switch response.result {
+            case .success(let data):
+                self.videoList.append(contentsOf: data.documents)
+            case .failure(let error):
+                print(error)
             }
         }
         
-//        AF.request(url, method: .get, headers: header)
-//            .validate(statusCode: 200...500)
-//            .responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                print(response.response?.statusCode)
-//                // validate 범위를 늘리면 다른 statusCode 를 예외처리 할 수 있음.
+//        KakaoAPIManager.shared.callRequest(type: .video, query: query) { JSON in
+//            print(JSON)
+////            let statusCode = JSON.response?.statusCode ?? 500
 //
+//            self.isEnd = JSON["meta"]["is_end"].boolValue
 //
-//            case .failure(let error):
-//                print(error)
+//            for item in JSON["documents"].arrayValue {
+//                let video = Video(
+//                    author: item["author"].stringValue,
+//                    date: item["datetime"].stringValue,
+//                    runTime: item["play_time"].intValue,
+//                    thumbnail: item["thumbnail"].stringValue,
+//                    title: item["title"].stringValue,
+//                    link: item["url"].stringValue)
+//
+//                self.videoList.append(video)
 //            }
 //        }
+
     }
 }
 
@@ -102,7 +103,6 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     // 취소 기능: 직접 취소하는 기능을 구현해주어야 함!
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         print("===취소: \(indexPaths)")
-        
     }
     
     
@@ -114,10 +114,12 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return UITableViewCell() }
         
-        cell.titleLabel.text = videoList[indexPath.row].title
-        cell.contentLabel.text = videoList[indexPath.row].contents
+        let row = videoList[indexPath.row]
         
-        if let url = URL(string: videoList[indexPath.row].thumbnail) {
+        cell.titleLabel.text = row.title
+        cell.contentLabel.text = "\(row.author) | \(row.playTime)회 \n\(row.datetime)"
+        
+        if let url = URL(string: row.thumbnail) {
             cell.thumbnailImageView.kf.setImage(with: url)
         }
         
